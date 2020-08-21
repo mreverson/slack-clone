@@ -24,7 +24,6 @@ function Header() {
                 <input placeholder="Search Slack Clone" />
             </div>
             <div className="header__right">
-                {/* Help Icon */}
                 <HelpOutlineIcon />
             </div>
         </div>
