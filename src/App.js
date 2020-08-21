@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './App.css';
-import Header from './Header';
-import Sidebar from './Sidebar';
+import './styles/css/App.css';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Chat from './Chat'
-import Login from './Login'
+import Chat from './components/Chat'
+import Login from './components/Login'
 import { useStateValue } from './StateProvider';
 
 function App() {

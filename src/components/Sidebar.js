@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Sidebar.css';
+import '../styles/css/Sidebar.css';
 import SidebarOption from "./SidebarOption";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
@@ -13,8 +13,8 @@ import AppsIcon from "@material-ui/icons/Apps";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
-import db from "./firebase";
-import { useStateValue } from './StateProvider';
+import db from "../firebase";
+import { useStateValue } from '../StateProvider';
 
 function Sidebar() {
     const [channels, setChannels] = useState([]);
