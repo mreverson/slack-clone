@@ -1,3 +1,5 @@
+SLACK CLONE
+
 
 ### `npm start`
 
@@ -9,3 +11,11 @@ You will also see any lint errors in the console.
 
 
 ### Firebase Config
+- Sign up for Firebase
+- Setup Cloud Firestore
+- Authentication -> Enable Google Auth
+- Project Settings -> Config object
+
+### `npm run build`
+
+### `firebase deploy`
