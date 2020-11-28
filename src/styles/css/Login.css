@@ -24,3 +24,43 @@
     background-color: #0a8d48!important;
     color: #fff;
 }
+
+hr {
+    margin: 15px 0;
+}
+
+.signup > form {
+    margin: 20px 0;
+}
+.signup > form > input {
+    width: 50%;
+    padding: 5px 5px;
+    margin: 10px 0;
+    height: 30px;
+    font-size: 24px;
+}
+
+.signup > form > button {
+    margin-top: 30px;
+    text-transform: inherit!important;
+    background-color: #0a8d48!important;
+    color: #fff;
+}
+
+.signin > form {
+    margin: 20px 0;
+}
+.signin > form > input {
+    width: 50%;
+    padding: 5px 5px;
+    margin: 10px 0;
+    height: 30px;
+    font-size: 24px;
+}
+
+.signin > form > button {
+    margin-top: 30px;
+    text-transform: inherit!important;
+    background-color: #0a8d48!important;
+    color: #fff;
+}

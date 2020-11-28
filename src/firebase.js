@@ -10,6 +10,7 @@ const firebaseConfig = {
     appId: "1:9293246772:web:e21a385911aceb5d47f561",
     measurementId: "G-KJSJ6R43BM"
 };
+
   
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
@@ -17,5 +18,5 @@ const db = firebaseApp.firestore();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { auth, provider };
+export { auth, provider};
 export default db;
