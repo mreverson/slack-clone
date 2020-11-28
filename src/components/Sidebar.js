@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/css/Sidebar.css';
 import SidebarOption from "./SidebarOption";
 import Popup from "./Popup";
+import Profile from "./Profile";
 import { Button } from "@material-ui/core";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
@@ -67,7 +68,9 @@ function Sidebar() {
                 <SidebarOption title={channel.name} id={channel.id} />
             ))}
         </div>
-        <Popup show={show} setShow={setShow}></Popup>
+        <Popup show={show} setShow={setShow}>
+            <Profile />
+        </Popup>
         </>
     );
 }

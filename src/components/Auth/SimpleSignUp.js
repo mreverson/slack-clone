@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import { auth } from "../../firebase";
 import { useStateValue } from '../../StateProvider';
 import { actionTypes } from "../../reducer"
+import db from "../../firebase"
 
 function SimpleSignUp() {
     const [state, dispatch] = useStateValue();

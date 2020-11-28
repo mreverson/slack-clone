@@ -14,6 +14,7 @@ function SimpleSignIn() {
         auth
         .signInWithEmailAndPassword(emailSignIn, passSignIn)
         .then(result => {
+            console.log("USER", result.user)
             dispatch({
                 type: actionTypes.SET_USER,
                 user: result.user 
