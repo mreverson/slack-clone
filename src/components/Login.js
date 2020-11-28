@@ -1,50 +1,20 @@
 import React, { useState } from 'react';
 import "../styles/css/Login.css";
-import { Button } from "@material-ui/core";
 import { auth, provider } from "../firebase";
 import { useStateValue } from '../StateProvider';
-import { actionTypes } from "../reducer"
+import { actionTypes } from "../reducer";
+import Popup from "./Popup";
+import SimpleSignIn from "./Auth/SimpleSignIn";
+import SimpleSignUp from "./Auth/SimpleSignUp";
 
 function Login() {
     const [state, dispatch] = useStateValue();
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const [emailSignIn, setEmailSignIn] = useState('');
-    const [passSignIn, setPassSignIn] = useState('');
-
+    const [show, setShow] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(false);
+    
     const signIn = () => {
         auth
         .signInWithPopup(provider)
-        .then(result => {
-            dispatch({
-                type: actionTypes.SET_USER,
-                user: result.user 
-            })
-        })
-        .catch(error => {
-            alert(error.message);
-        })
-
-    }
-
-    const signInSimple = () => {
-        auth
-        .signInWithEmailAndPassword(emailSignIn, passSignIn)
-        .then(result => {
-            dispatch({
-                type: actionTypes.SET_USER,
-                user: result.user 
-            })
-        })
-        .catch(error => {
-            alert(error.message);
-        })
-
-    }
-
-    const signUpSimple = () => {
-        auth
-        .createUserWithEmailAndPassword(email, pass)
         .then(result => {
             dispatch({
                 type: actionTypes.SET_USER,
@@ -65,45 +35,16 @@ function Login() {
                     alt=""
                 />
                 <h1 onClick={signIn}>Sign In with Google</h1>
-                <Button onClick={signIn}>Sign In</Button>
                 <hr />
-                <div className="signin">
-                    <h1>Sign In with Email</h1>
-                    <form>
-                        <input
-                            placeholder={`Email`}
-                            value={emailSignIn}
-                            onChange={e => setEmailSignIn(e.target.value)}
-                        />
-                        <input
-                            placeholder={`Password`}
-                            type={'password'} 
-                            value={passSignIn}
-                            onChange={e => setPassSignIn(e.target.value)}
-                        />
-                        <br />
-                        <Button onClick={signInSimple}>Sign In</Button>
-                    </form>
-                </div>
+                <h1 onClick={() => setShow(true)}>Sign In with Email</h1>
+                <Popup show={show} setShow={setShow}>
+                    <SimpleSignIn />
+                </Popup> 
                 <hr />
-                <div className="signup">
-                    <h1>Sign Up with Email</h1>
-                    <form>
-                        <input
-                            placeholder={`Email`} 
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                        <input
-                            placeholder={`Password`}
-                            type={'password'} 
-                            value={pass}
-                            onChange={e => setPass(e.target.value)}
-                        />
-                        <br />
-                        <Button onClick={signUpSimple}>Sign Up</Button>
-                    </form>
-                </div>
+                <h1 onClick={() => setShowSignUp(true)}>Sign Up with Email</h1>
+                <Popup show={showSignUp} setShow={setShowSignUp}>
+                    <SimpleSignUp />
+                </Popup>
             </div>
         </div>
     )
