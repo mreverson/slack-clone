@@ -5,9 +5,10 @@
 }
 
 .message > img {
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 .message__info {

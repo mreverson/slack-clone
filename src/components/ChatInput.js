@@ -11,16 +11,18 @@ function ChatInput({channelName, channelId}) {
 
     const sendMessage = e => {
         e.preventDefault();
-
-        if (channelId) {
-            db.collection('rooms').doc(channelId).collection('messages').add({
-                message: input,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                user: user.displayName ? user.displayName: user.email,
-                userImage: user?.photoURL
-            });
+        if (input) {
+            if (channelId) {
+                db.collection('rooms').doc(channelId).collection('messages').add({
+                    message: input,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    user: user.displayName ? user.displayName: user.email,
+                    userImage: user?.photoURL
+                });
+            }
+            setInput("");
         }
-        setInput("");
+        
 
     }
 
@@ -32,7 +34,7 @@ function ChatInput({channelName, channelId}) {
                     value={input}
                     onChange={e => setInput(e.target.value)}
                 />
-                <Button type="submit" onClick={sendMessage}>SEND</Button>
+                <Button type="submit" onClick={sendMessage}>Enter</Button>
             </form>
         </div>
     )

@@ -6,9 +6,12 @@
     position: relative;
     display: flex;
     justify-content: center;
+    
 }
 
 .chatInput > form > input {
+    display: flex;
+    flex: 0.7;
     position: fixed;
     bottom: 30px;
     width: 60%;
@@ -18,5 +21,10 @@
 }
 
 .chatInput > form > button {
-    display: none!important;
+    display: none;
+    flex: 0.3;
+    position: fixed;
+    bottom: 40px;
+    right: 5%;
+
 }
